@@ -1363,16 +1363,16 @@
         },
         {
             "name": "nbaskoff/beetlecore",
-            "version": "v1.0.1",
+            "version": "v1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/NBaskoff/BeetleCore.git",
-                "reference": "bd5fe5f3da231c94e50d4cdd3996b00993ca66ff"
+                "reference": "9ac9ec69ef932bd556b088d1d05b2fbc2b8ef77d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NBaskoff/BeetleCore/zipball/bd5fe5f3da231c94e50d4cdd3996b00993ca66ff",
-                "reference": "bd5fe5f3da231c94e50d4cdd3996b00993ca66ff",
+                "url": "https://api.github.com/repos/NBaskoff/BeetleCore/zipball/9ac9ec69ef932bd556b088d1d05b2fbc2b8ef77d",
+                "reference": "9ac9ec69ef932bd556b088d1d05b2fbc2b8ef77d",
                 "shasum": ""
             },
             "require": {
@@ -1388,7 +1388,8 @@
             "extra": {
                 "laravel": {
                     "providers": [
-                        "BeetleCore\\Provider\\Migrations"
+                        "BeetleCore\\Provider\\Migrations",
+                        "BeetleCore\\Provider\\Routes"
                     ]
                 }
             },
@@ -1415,7 +1416,7 @@
                 "laravel",
                 "panel"
             ],
-            "time": "2020-09-02T19:47:29+00:00"
+            "time": "2020-09-03T07:38:40+00:00"
         },
         {
             "name": "nesbot/carbon",

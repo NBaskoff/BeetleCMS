@@ -19,7 +19,6 @@ Route::group(["prefix" => "admin", "namespace" => "Admin", "middleware" => ["bee
 		return redirect()->route("admin.page", "show");
 	})->name("admin.index");
 	Route::get("/exit", "Auth@exit")->name("admin.exit");
-	Route::get("/back/{count}", "Back")->name("admin.back");
 	Route::match(["get", "post"], "/settings", "Settings")->name("admin.settings");
 
 	$urlType = "{action}/{parent?}/{id?}/{record?}/";
@@ -32,6 +31,11 @@ Route::group(["prefix" => "admin", "namespace" => "Admin", "middleware" => ["bee
 	Route::match(["get", "post"], "/slider/$urlType", "Slider")->name("admin.slider");
 	Route::match(["get", "post"], "/delivery/$urlType", "Delivery")->name("admin.delivery");
 	Route::match(["get", "post"], "/payment/$urlType", "Payment")->name("admin.payment");
+
+	Route::match(['post'], "/system/image/size", "\\BeetleCore\\Controllers\\Image@size");
+	Route::match(['post'], "/system/image/load", "\\BeetleCore\\Controllers\\Image@load");
+	Route::match(['post'], "/system/relation/form/{model}", "\\BeetleCore\\Controllers\\Relation@form");
+	Route::match(['post'], "/system/relation/table/{model}", "\\BeetleCore\\Controllers\\Relation@table");
 });
 
 
