@@ -30,15 +30,9 @@ Route::group(["prefix" => "admin", "namespace" => "Admin", "middleware" => ["bee
 	Route::match(['get', 'post'], "/catalog_items/$urlType", "CatalogItems")->name('admin.catalog_items');
 	Route::match(['get', 'post'], "/user_admin/$urlType", "UserAdmin")->name('admin.user_admin');
 	Route::match(["get", "post"], "/slider/$urlType", "Slider")->name("admin.slider");
-	Route::match(["get", "post"], "/slider/$urlType", "Delivery")->name("admin.delivery");
-	Route::match(["get", "post"], "/slider/$urlType", "Payment")->name("admin.payment");
-
-	Route::match(['post'], "/system/image/size", "Image@size");
-	Route::match(['post'], "/system/image/load", "Image@load");
-	Route::match(['post'], "/system/relation/form/{model}", "Relation@form");
-	Route::match(['post'], "/system/relation/table/{model}", "Relation@table");
+	Route::match(["get", "post"], "/delivery/$urlType", "Delivery")->name("admin.delivery");
+	Route::match(["get", "post"], "/payment/$urlType", "Payment")->name("admin.payment");
 });
-
 
 
 Route::get('/', function () {
