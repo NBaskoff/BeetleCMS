@@ -11,7 +11,6 @@ use BeetleCore\Validator\Unique;
 class Delivery extends Admin
 {
     protected $table = "delivery";
-    protected $primaryKey = "id";
     public $modelName = "Способы доставки";
     public $modelDescription = "";
     public $positionKey = "position";

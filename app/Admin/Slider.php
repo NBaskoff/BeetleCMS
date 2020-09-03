@@ -13,13 +13,10 @@ use App\sliderItems;
 class Slider extends Admin
 {
     protected $table = "slider";
-    protected $primaryKey = "id";
     public $modelName = "Слайдер";
     public $modelDescription = "";
     public $positionKey = "position";
     public $nameKey = "name";
-    const CREATED_AT = 'created_at';
-    const UPDATED_AT = 'updated_at';
     protected $fields = [
         "name" => [
             "name" => "Название",

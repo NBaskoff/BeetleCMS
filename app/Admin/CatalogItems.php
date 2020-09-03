@@ -18,26 +18,25 @@ use BeetleCore\Validator\Unique;
 class CatalogItems extends Admin
 {
 	protected $table = "catalog_items";
-	protected $primaryKey = "id";
 	public $nameKey = "name";
 	public $modelName = "Позиции каталога";
 	public $modelDescription = "";
 	public $positionKey = "position";
-	const CREATED_AT = 'created_at';
-	const UPDATED_AT = 'updated_at';
 	protected $fields = [
-		"name" => ["name" => "Название", "type" => Textbox::class, "validators" => [[NoEmpty::class], [Unique::class]],],
+		"name" => ["name" => "Название", "type" => Textbox::class, "validators" => [[NoEmpty::class], [Unique::class]]],
 		"display" => ["name" => "Опубликовать", "type" => Checkbox::class, "default" => "Y"],
-		"price" => ["name" => "Цена", "type" => Integer::class, "validators" => [[NoEmpty::class],],],
-		"price_sale" => ["name" => "Цена скидкой", "type" => Integer::class,],
-		"price_day" => ["name" => "День недели", "type" => Select::class, "data" => [1 => "Понедельник", 2 => "Вторник", 3 => "Среда", 4 => "Четверг", 5 => "Пятница", 6 => "Суббота", 7 => "Воскресенье",]],
-		"img" => ["name" => "Изображение", "desc" => "250*250 пикселей", "type" => Images::class, "width" => 250, "height" => 250, "show" => true], "body" => ["name" => "Описание", "type" => Html::class, "show" => false], "parent" => ["name" => "Рубрика", "text" => "Выберите рубрику для этого товара", "type" => Relation::class, "show" => false, "validators" => [[NoEmpty::class],],],
+		"price" => ["name" => "Цена", "type" => Integer::class, "validators" => [[NoEmpty::class]]],
+		"price_sale" => ["name" => "Цена скидкой", "type" => Integer::class],
+		"body" => ["name" => "Описание", "type" => Html::class],
+		"img" => ["name" => "Изображение", "desc" => "250*250 пикселей", "type" => Images::class, "width" => 250, "height" => 250, "show" => true],
+		"body" => ["name" => "Описание", "type" => Html::class, "show" => false],
+		"catalog" => ["name" => "Рубрика", "text" => "Выберите рубрику для этого товара", "type" => Relation::class, "show" => false, "validators" => [[NoEmpty::class]]],
 	];
 	protected $settings = [];
 
-	public function parent()
+	public function catalog()
 	{
-		return $this->belongsTo(Catalog::class, "parent", "catalog_id");
+		return $this->belongsTo(Catalog::class, "parent_id", "id");
 	}
 
 	public function image()

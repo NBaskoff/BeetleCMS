@@ -14,7 +14,6 @@ use BeetleCore\Validator\Unique;
 class Page extends Admin
 {
     protected $table = "page";
-    protected $primaryKey = "id";
     public $modelName = "Страницы";
     public $modelDescription = "";
     public $positionKey = "position";
@@ -48,11 +47,8 @@ class Page extends Admin
         ]*/
     ];
     protected $settings = [];
-    //protected $linkSelf = "parent.child";
     protected $links = [
-        //"parent.child" => ["admin.page", "Страницы следующего уровня"],
-        //"page.params" => ["admin.param", "Параметры"],
-        //"pages.colors" => ["admin.color", "Цвета"],
+        //"colors.pages" => ["admin.color", "Цвета"],
     ];
 
 

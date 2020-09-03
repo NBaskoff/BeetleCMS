@@ -14,8 +14,7 @@
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.24",
         "laravel/tinker": "^2.0",
-        "nbaskoff/beetlecore": "^0.0.2",
-        "smottt/wideimage": "^1.1"
+        "nbaskoff/beetlecore": "^1.0"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

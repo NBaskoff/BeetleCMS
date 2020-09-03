@@ -10,7 +10,6 @@ use BeetleCore\Validator\Unique;
 class Payment extends Admin
 {
     protected $table = "payment";
-    protected $primaryKey = "id";
     public $modelName = "Способы оплаты";
     public $modelDescription = "";
     public $positionKey = "position";

@@ -4,22 +4,14 @@
 namespace App\Admin;
 
 use BeetleCore\Fields\Html;
-use BeetleCore\FileArray;
+use BeetleCore\Fields\Textbox;
 
 class Settings extends \BeetleCore\Model\Settings
 {
 	protected $fields = [
-		"user_auth_text" => [
-			"name" => "Текст Вход в кабинет покупателя",
-			"type" => Html::class,
-		],
-		"user_reg_text" => [
-			"name" => "Текст Регистрация",
-			"type" => Html::class,
-		],
-		"user_reg_active" => [
-			"name" => "Письмо об одобрении аккаунта",
-			"type" => Html::class,
+		"title" => [
+			"name" => "Название сайта",
+			"type" => Textbox::class,
 		],
 		"cart_mail" => [
 			"name" => "Письмо при заказе клиенту",

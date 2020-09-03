@@ -11,12 +11,11 @@ use BeetleCore\Fields\Relation;
 
 use BeetleCore\Validator\NoEmpty;
 use BeetleCore\Validator\Unique;
-use App\CatalogItems;
+
 
 class Catalog extends Admin
 {
     protected $table = "catalog";
-    protected $primaryKey = "id";
     public $modelName = "Каталог";
     public $modelDescription = "";
     public $positionKey = "position";
@@ -51,26 +50,24 @@ class Catalog extends Admin
         ]
     ];
     protected $settings = [];
-    protected $linkSelf = "parent.child";
+    protected $linkSelf = "child.parent";
     protected $links = [
-        "parent.child" => ["admin.catalog", "Подкатегории следующего уровня"],
-        "parent.items" => ["admin.items", "Товары рубрики"],
-        //"page.params" => ["admin.param", "Параметры"],
-        //"pages.colors" => ["admin.color", "Цвета"],
+        "child.parent" => ["admin.catalog", "Подкатегории следующего уровня"],
+        "items.catalog" => ["admin.catalog_items", "Товары рубрики"],
     ];
 
     public function parent()
     {
-        return $this->belongsTo(self::class, "parent", "id");
+        return $this->belongsTo(self::class, "parent_id", "id");
     }
 
     public function child()
     {
-        return $this->hasMany(self::class, "parent", "id");
+        return $this->hasMany(self::class, "parent_id", "id");
     }
 
     public function items()
     {
-        return $this->hasMany(CatalogItems::class, "items_parent", "id");
+        return $this->hasMany(CatalogItems::class, "parent_id", "id");
     }
 }

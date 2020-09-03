@@ -18,7 +18,6 @@ use App\userItems;
 class User extends Admin
 {
 	protected $table = "user";
-	protected $primaryKey = "id";
 	public $modelName = "Пользователи сайта";
 	public $nameKey = "name";
 	protected $fields = [
