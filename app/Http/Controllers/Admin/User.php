@@ -10,7 +10,7 @@ class User extends Admin
 {
     protected $modelName = \App\Admin\User::class;
 
-    protected function addEditBeforeSave($parent, $id, $record, $add)
+    /*protected function addEditBeforeSave($parent, $id, $record, $add)
     {
         $activeBefore = $record->user_active ?? "N";
         $activeNow = request("user_active", "N");
@@ -28,6 +28,6 @@ class User extends Admin
             $mail->AltBody = Feedback::strip_html_tags($body);
             $mail->send();
         }
-    }
+    }*/
 
 }
