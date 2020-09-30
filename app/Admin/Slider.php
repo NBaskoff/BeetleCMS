@@ -6,8 +6,8 @@ namespace App\Admin;
 
 use BeetleCore\Fields\Images;
 use BeetleCore\Fields\Textbox;
-use BeetleCore\Validator\NoEmpty;
-use BeetleCore\Validator\Unique;
+use BeetleCore\Validators\NoEmpty;
+use BeetleCore\Validators\Unique;
 use App\sliderItems;
 
 class Slider extends Admin

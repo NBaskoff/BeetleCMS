@@ -5,8 +5,8 @@ namespace App\Admin;
 use BeetleCore\Fields\Html;
 use BeetleCore\Fields\Integer;
 use BeetleCore\Fields\Textbox;
-use BeetleCore\Validator\NoEmpty;
-use BeetleCore\Validator\Unique;
+use BeetleCore\Validators\NoEmpty;
+use BeetleCore\Validators\Unique;
 
 class Delivery extends Admin
 {

@@ -3,7 +3,7 @@
 
 namespace App\Admin;
 
-class UserAdmin extends \BeetleCore\Model\UserAdmin
+class UserAdmin extends \BeetleCore\Models\UserAdmin
 {
 
 }

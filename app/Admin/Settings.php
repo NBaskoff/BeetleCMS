@@ -6,7 +6,7 @@ namespace App\Admin;
 use BeetleCore\Fields\Html;
 use BeetleCore\Fields\Textbox;
 
-class Settings extends \BeetleCore\Model\Settings
+class Settings extends \BeetleCore\Models\Settings
 {
 	protected $fields = [
 		"title" => [

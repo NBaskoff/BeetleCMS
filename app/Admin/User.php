@@ -11,8 +11,8 @@ use BeetleCore\Fields\Textbox;
 use BeetleCore\Fields\Images;
 use BeetleCore\Fields\Relation;
 
-use BeetleCore\Validator\NoEmpty;
-use BeetleCore\Validator\Unique;
+use BeetleCore\Validators\NoEmpty;
+use BeetleCore\Validators\Unique;
 use App\userItems;
 
 class User extends Admin
