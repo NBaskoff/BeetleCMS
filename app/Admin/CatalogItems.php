@@ -22,6 +22,7 @@ class CatalogItems extends Admin
 	public $modelName = "Позиции каталога";
 	public $modelDescription = "";
 	public $positionKey = "position";
+    public $activeKey = "display";
 	protected $fields = [
 		"name" => ["name" => "Название", "type" => Textbox::class, "validators" => [[NoEmpty::class], [Unique::class]]],
 		"display" => ["name" => "Опубликовать", "type" => Checkbox::class, "default" => "Y"],
