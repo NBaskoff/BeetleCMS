@@ -25,7 +25,7 @@ class CatalogItems extends Admin
     public $activeKey = "display";
 	protected $fields = [
 		"name" => ["name" => "Название", "type" => Textbox::class, "validators" => [[NoEmpty::class], [Unique::class]]],
-		"display" => ["name" => "Опубликовать", "type" => Checkbox::class, "default" => "Y"],
+		"display" => ["name" => "Опубликовать", "type" => Checkbox::class, "default" => "Y", "show" => false],
 		"price" => ["name" => "Цена", "type" => Integer::class, "validators" => [[NoEmpty::class]]],
 		"price_sale" => ["name" => "Цена скидкой", "type" => Integer::class],
 		"body" => ["name" => "Описание", "type" => Html::class],
