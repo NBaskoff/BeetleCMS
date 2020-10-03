@@ -36,7 +36,6 @@ Route::group(["prefix" => "admin", "namespace" => "Admin", "middleware" => ["bee
 	Route::match(['post'], "/system/image/load", "\\BeetleCore\\Controllers\\Image@load");
 	Route::match(['post'], "/system/relation/form/{model}", "\\BeetleCore\\Controllers\\Relation@form");
 	Route::match(['post'], "/system/relation/table/{model}", "\\BeetleCore\\Controllers\\Relation@table");
-    Route::match(['get'], "/system/back", "\\BeetleCore\\Controllers\\Back")->name("admin.back");;
 });
 
 
