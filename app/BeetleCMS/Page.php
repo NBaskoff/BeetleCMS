@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Admin;
+namespace App\BeetleCMS;
 
 
 use BeetleCore\Fields\Html;
@@ -52,4 +52,8 @@ class Page extends Admin
     ];
 
 
+    public function start()
+    {
+
+    }
 }

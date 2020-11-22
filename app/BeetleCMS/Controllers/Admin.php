@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Http\Controllers\Admin;
+namespace App\BeetleCMS\Controllers;
 
 use BeetleCore\Controllers\Table;
 

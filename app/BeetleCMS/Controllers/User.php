@@ -1,14 +1,14 @@
 <?php
 
 
-namespace App\Http\Controllers\Admin;
+namespace App\BeetleCMS\Controllers;
 
 use App\Http\Controllers\Feedback;
 use PHPMailer\PHPMailer\PHPMailer;
 
 class User extends Admin
 {
-    protected $modelName = \App\Admin\User::class;
+    protected $modelName = \App\BeetleCMS\User::class;
 
     /*protected function addEditBeforeSave($parent, $id, $record, $add)
     {

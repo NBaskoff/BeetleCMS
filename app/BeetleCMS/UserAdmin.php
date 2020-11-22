@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Admin;
+namespace App\BeetleCMS;
 
 class UserAdmin extends \BeetleCore\Models\UserAdmin
 {

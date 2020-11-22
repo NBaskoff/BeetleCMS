@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Http\Controllers\Admin;
+namespace App\BeetleCMS\Controllers;
 
 
 use App\Beetle\FileArray;
@@ -10,6 +10,6 @@ use Illuminate\Http\Request;
 
 class Settings extends \BeetleCore\Controllers\Settings
 {
-	protected $model = \App\Admin\Settings::class;
+	protected $model = \App\BeetleCMS\Settings::class;
 
 }

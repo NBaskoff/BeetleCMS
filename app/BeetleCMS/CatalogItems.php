@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Admin;
+namespace App\BeetleCMS;
 
 
 use BeetleCore\Fields\Checkbox;

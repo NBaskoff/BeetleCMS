@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Admin;
+namespace App\BeetleCMS;
 
 use BeetleCore\Fields\Html;
 use BeetleCore\Fields\Textbox;
