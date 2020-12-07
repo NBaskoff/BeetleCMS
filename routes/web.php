@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Artisan::call('view:clear');
 
 Route::group(["prefix" => "admin", "middleware" => ["beetle-authenticate"]], function () {
@@ -37,10 +36,6 @@ Route::group(["prefix" => "admin", "middleware" => ["beetle-authenticate"]], fun
     Route::match(['post'], "/system/image/load", "\\BeetleCore\\Controllers\\Image@load");
     Route::match(['post'], "/system/relation/form/{model}", "\\BeetleCore\\Controllers\\Relation@form");
     Route::match(['post'], "/system/relation/table/{model}", "\\BeetleCore\\Controllers\\Relation@table");
-});
-
-Route::group(["prefix" => "admin", "namespace" => "Admin", "middleware" => ["beetle-authenticate"]], function () {
-
 });
 
 Route::get('/', function () {
