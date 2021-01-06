@@ -18,10 +18,10 @@ Route::group(["prefix" => "admin", "middleware" => ["beetle-authenticate"]], fun
     Route::get("/", function () {
         return redirect()->route("admin.page", "show");
     })->name("admin.index");
-    Route::get("/exit", "App\Admin\Controllers\Auth@exit")->name("admin.exit");
+    Route::get("/exit", "App\BeetleCMS\Controllers\Auth@exit")->name("admin.exit");
     Route::match(["get", "post"], "/settings", App\BeetleCMS\Controllers\Settings::class)->name("admin.settings");
 
-    $urlType = "{action}/{parent?}/{id?}/{record?}/";
+    $urlType = "{action}/{parent?}/{parent_id?}/{record_id?}/";
 
     Route::match(['get', 'post'], "/user/$urlType", App\BeetleCMS\Controllers\User::class)->name('admin.user');
     Route::match(['get', 'post'], "/page/$urlType", App\BeetleCMS\Controllers\Page::class)->name('admin.page');
@@ -32,10 +32,15 @@ Route::group(["prefix" => "admin", "middleware" => ["beetle-authenticate"]], fun
     Route::match(["get", "post"], "/delivery/$urlType", App\BeetleCMS\Controllers\Delivery::class)->name("admin.delivery");
     Route::match(["get", "post"], "/payment/$urlType", App\BeetleCMS\Controllers\Payment::class)->name("admin.payment");
 
+
+    Route::match(['post'], "/system/form/load", "\\BeetleCore\\Controllers\\Form@load");
+    Route::match(['post'], "/system/form/save", "\\BeetleCore\\Controllers\\Form@save");
+
     Route::match(['post'], "/system/image/size", "\\BeetleCore\\Controllers\\Image@size");
     Route::match(['post'], "/system/image/load", "\\BeetleCore\\Controllers\\Image@load");
-    Route::match(['post'], "/system/relation/form/{model}", "\\BeetleCore\\Controllers\\Relation@form");
-    Route::match(['post'], "/system/relation/table/{model}", "\\BeetleCore\\Controllers\\Relation@table");
+
+    Route::match(["get", "post"], "/system/relation/form", "\\BeetleCore\\Controllers\\Relation@form");
+    Route::match(["get", "post"], "/system/relation/table", "\\BeetleCore\\Controllers\\Relation@table");
 });
 
 Route::get('/', function () {
