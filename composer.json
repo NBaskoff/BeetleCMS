@@ -4,7 +4,11 @@
     "description": "BeetleCMS on Laravel Framework.",
     "keywords": [
         "framework",
-        "laravel"
+        "laravel",
+        "admin",
+        "panel",
+        "cms",
+        "beetlecms"
     ],
     "license": "MIT",
     "require": {
