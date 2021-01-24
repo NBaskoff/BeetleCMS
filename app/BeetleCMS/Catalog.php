@@ -10,7 +10,6 @@ use BeetleCore\Fields\Images;
 use BeetleCore\Fields\Relation;
 
 use BeetleCore\Validators\NoEmpty;
-use BeetleCore\Validators\Unique;
 
 
 class Catalog extends Admin
