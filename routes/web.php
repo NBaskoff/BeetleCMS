@@ -32,7 +32,7 @@ Route::group(["prefix" => "admin", "middleware" => ["beetle-authenticate"]], fun
     Route::match(["get", "post"], "/delivery/$urlType", App\BeetleCMS\Controllers\Delivery::class)->name("admin.delivery");
     Route::match(["get", "post"], "/payment/$urlType", App\BeetleCMS\Controllers\Payment::class)->name("admin.payment");
 
-
+    
     Route::match(['post'], "/system/form/load", "\\BeetleCore\\Controllers\\Form@load");
     Route::match(['post'], "/system/form/save", "\\BeetleCore\\Controllers\\Form@save");
 
