@@ -27,7 +27,7 @@ class Page extends Admin
             ],
         ],
         "link" => [
-            "name" => "Адрес",
+            "name" => "Адрес страницы (url)",
             "type" => Textbox::class,
             "validators" => [
                 [NoEmpty::class],
