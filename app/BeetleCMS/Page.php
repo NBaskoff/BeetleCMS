@@ -51,9 +51,4 @@ class Page extends Admin
         //"colors.pages" => ["admin.color", "Цвета"],
     ];
 
-
-    public function start()
-    {
-
-    }
 }
