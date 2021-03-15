@@ -5,6 +5,7 @@ namespace App\BeetleCMS;
 
 
 use BeetleCore\Fields\Html;
+use BeetleCore\Fields\Textarea;
 use BeetleCore\Fields\Textbox;
 use BeetleCore\Fields\Images;
 use BeetleCore\Fields\Relation;
@@ -27,6 +28,21 @@ class Catalog extends Admin
                 [NoEmpty::class],
                 //[Unique::class]
             ],
+        ],
+        "title" => [
+            "name" => "SEO title",
+            "type" => Textbox::class,
+            "show" => false
+        ],
+        "description" => [
+            "name" => "SEO description",
+            "type" => Textarea::class,
+            "show" => false
+        ],
+        "keywords" => [
+            "name" => "SEO keywords",
+            "type" => Textarea::class,
+            "show" => false
         ],
         "img" => [
             "name" => "Изображение рубрики",

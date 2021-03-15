@@ -18,7 +18,10 @@ class CreateCatalogTable extends Migration
 			$table->integer("parent_id")->index();
 			$table->integer("position")->index();
             $table->string("name");
-			$table->text("img")->nullable();
+            $table->text("title")->nullable();
+            $table->text("description")->nullable();
+            $table->text("keywords")->nullable();
+            $table->text("img")->nullable();
             $table->timestamps();
         });
     }

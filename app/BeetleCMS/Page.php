@@ -5,9 +5,11 @@ namespace App\BeetleCMS;
 
 
 use BeetleCore\Fields\Html;
+use BeetleCore\Fields\Textarea;
 use BeetleCore\Fields\Textbox;
 use BeetleCore\Fields\Relation;
 
+use BeetleCore\Fields\Url;
 use BeetleCore\Validators\NoEmpty;
 use BeetleCore\Validators\Unique;
 
@@ -28,11 +30,27 @@ class Page extends Admin
         ],
         "link" => [
             "name" => "Адрес страницы (url)",
-            "type" => Textbox::class,
+            "type" => Url::class,
+            "mask" => "/page/{url}",
             "validators" => [
                 [NoEmpty::class],
                 [Unique::class]
             ],
+        ],
+        "title" => [
+            "name" => "SEO title",
+            "type" => Textbox::class,
+            "show" => false
+        ],
+        "description" => [
+            "name" => "SEO description",
+            "type" => Textarea::class,
+            "show" => false
+        ],
+        "keywords" => [
+            "name" => "SEO keywords",
+            "type" => Textarea::class,
+            "show" => false
         ],
         "body" => [
             "name" => "Текст",

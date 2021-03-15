@@ -17,7 +17,10 @@ class CreatePageTable extends Migration
             $table->id();
 			$table->integer("position")->index();
             $table->string("name");
-			$table->string("link");
+            $table->text("title")->nullable();
+            $table->text("description")->nullable();
+            $table->text("keywords")->nullable();
+            $table->string("link");
 			$table->text("body");
             $table->timestamps();
         });

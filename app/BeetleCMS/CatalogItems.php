@@ -7,6 +7,7 @@ namespace App\BeetleCMS;
 use BeetleCore\Fields\Checkbox;
 use BeetleCore\Fields\Html;
 use BeetleCore\Fields\Select;
+use BeetleCore\Fields\Textarea;
 use BeetleCore\Fields\Textbox;
 use BeetleCore\Fields\Images;
 use BeetleCore\Fields\Relation;
@@ -22,16 +23,58 @@ class CatalogItems extends Admin
 	public $modelName = "Позиции каталога";
 	public $modelDescription = "";
 	public $positionKey = "position";
-    public $activeKey = "display";
+    public $activeKey = "active";
 	protected $fields = [
-		"name" => ["name" => "Название", "type" => Textbox::class, "validators" => [[NoEmpty::class], [Unique::class]]],
-		"display" => ["name" => "Опубликовать", "type" => Checkbox::class, "default" => "Y", "show" => false],
-		"price" => ["name" => "Цена", "type" => Integer::class, "validators" => [[NoEmpty::class]]],
-		"price_sale" => ["name" => "Цена скидкой", "type" => Integer::class],
-		"body" => ["name" => "Описание", "type" => Html::class],
-		"img" => ["name" => "Изображение", "desc" => "250*250 пикселей", "type" => Images::class, "width" => 250, "height" => 250, "show" => true],
-		"body" => ["name" => "Описание", "type" => Html::class, "show" => false],
-		"catalog" => ["name" => "Рубрика", "text" => "Выберите рубрику для этого товара", "type" => Relation::class, "show" => false, "validators" => [[NoEmpty::class]]],
+		"name" => [
+		    "name" => "Название",
+            "type" => Textbox::class,
+            "validators" => [[NoEmpty::class], [Unique::class]]
+        ],
+        "title" => [
+            "name" => "SEO title",
+            "type" => Textbox::class,
+        ],
+        "description" => [
+            "name" => "SEO description",
+            "type" => Textarea::class,
+        ],
+        "keywords" => [
+            "name" => "SEO keywords",
+            "type" => Textarea::class,
+        ],
+		"price" => [
+		    "name" => "Цена",
+            "type" => Integer::class,
+            "validators" => [[NoEmpty::class]]
+        ],
+		"price_sale" => [
+		    "name" => "Цена скидкой",
+            "type" => Integer::class
+        ],
+		"body" => [
+		    "name" => "Описание",
+            "type" => Html::class
+        ],
+		"img" => [
+		    "name" => "Изображение",
+            "desc" => "250*250 пикселей",
+            "type" => Images::class,
+            "width" => 250,
+            "height" => 250,
+            "show" => true
+        ],
+		"body" => [
+		    "name" => "Описание",
+            "type" => Html::class,
+            "show" => false
+        ],
+		"catalog" => [
+		    "name" => "Рубрика",
+            "text" => "Выберите рубрику для этого товара",
+            "type" => Relation::class,
+            "show" => false,
+            "validators" => [[NoEmpty::class]]
+        ],
 	];
 	protected $settings = [];
 

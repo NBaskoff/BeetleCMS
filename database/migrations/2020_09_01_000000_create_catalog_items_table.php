@@ -18,7 +18,10 @@ class CreateCatalogItemsTable extends Migration
 			$table->integer("parent_id")->index();
 			$table->integer("position")->index();
             $table->string("name");
-			$table->enum("display", ["Y", "N"])->default("Y");
+			$table->enum("active", ["Y", "N"])->default("Y");
+            $table->text("title")->nullable();
+            $table->text("description")->nullable();
+            $table->text("keywords")->nullable();
 			$table->float("price")->nullable();
 			$table->float("price_sale")->nullable();
 			$table->text("body")->nullable();
