@@ -7,8 +7,6 @@ namespace App\BeetleCMS;
 use BeetleCore\Fields\Html;
 use BeetleCore\Fields\Textarea;
 use BeetleCore\Fields\Textbox;
-use BeetleCore\Fields\Relation;
-
 use BeetleCore\Fields\Url;
 use BeetleCore\Validators\NoEmpty;
 use BeetleCore\Validators\Unique;
@@ -38,19 +36,25 @@ class Page extends Admin
             ],
         ],
         "title" => [
-            "name" => "SEO title",
+            "name" => "title",
             "type" => Textbox::class,
-            "show" => false
+            "show" => false,
+            "find" => false,
+            "tab" => "SEO"
         ],
         "description" => [
-            "name" => "SEO description",
+            "name" => "description",
             "type" => Textarea::class,
-            "show" => false
+            "show" => false,
+            "find" => false,
+            "tab" => "SEO"
         ],
         "keywords" => [
-            "name" => "SEO keywords",
+            "name" => "keywords",
             "type" => Textarea::class,
-            "show" => false
+            "show" => false,
+            "find" => false,
+            "tab" => "SEO"
         ],
         "body" => [
             "name" => "Текст",

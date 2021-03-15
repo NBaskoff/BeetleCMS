@@ -3,6 +3,8 @@
 
 namespace App\BeetleCMS;
 
+use BeetleCore\Fields\Images;
+use BeetleCore\Fields\Textarea;
 use BeetleCore\Fields\Textbox;
 
 class Settings extends \BeetleCore\Models\Settings
@@ -13,12 +15,14 @@ class Settings extends \BeetleCore\Models\Settings
             "type" => Textbox::class,
         ],
         "description" => [
-            "name" => "SEO description",
+            "name" => "description",
             "type" => Textarea::class,
+            "tab" => "SEO"
         ],
         "keywords" => [
-            "name" => "SEO keywords",
+            "name" => "keywords",
             "type" => Textarea::class,
+            "tab" => "SEO"
         ],
         "favicon" => [
             "name" => "Favicon",
