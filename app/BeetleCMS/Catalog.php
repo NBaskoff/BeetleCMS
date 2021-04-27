@@ -30,19 +30,25 @@ class Catalog extends Admin
             ],
         ],
         "title" => [
-            "name" => "SEO title",
+            "name" => "title",
             "type" => Textbox::class,
-            "show" => false
+            "show" => false,
+            "find" => false,
+            "tab" => "SEO"
         ],
         "description" => [
-            "name" => "SEO description",
+            "name" => "description",
             "type" => Textarea::class,
-            "show" => false
+            "show" => false,
+            "find" => false,
+            "tab" => "SEO"
         ],
         "keywords" => [
-            "name" => "SEO keywords",
+            "name" => "keywords",
             "type" => Textarea::class,
-            "show" => false
+            "show" => false,
+            "find" => false,
+            "tab" => "SEO"
         ],
         "img" => [
             "name" => "Изображение рубрики",
